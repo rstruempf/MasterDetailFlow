@@ -23,6 +23,12 @@ public class DummyContent {
      */
     public static final Map<String, DummyItem> ITEM_MAP = new HashMap<String, DummyItem>();
 
+    static {
+        addItem(new DummyItem("1", "eBookFrenzy", "http://www.ebookfrenzy.com"));
+        addItem(new DummyItem("2", "Amazon", "http://www.amazon.com"));
+        addItem(new DummyItem("3", "New York Times", "http://www.nytimes.com"));
+    }
+
     private static void addItem(DummyItem item) {
         ITEMS.add(item);
         ITEM_MAP.put(item.id, item);

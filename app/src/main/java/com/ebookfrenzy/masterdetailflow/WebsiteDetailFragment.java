@@ -8,6 +8,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import android.webkit.WebView;
 
 import com.ebookfrenzy.masterdetailflow.dummy.DummyContent;
 
@@ -49,7 +50,7 @@ public class WebsiteDetailFragment extends Fragment {
             Activity activity = this.getActivity();
             CollapsingToolbarLayout appBarLayout = (CollapsingToolbarLayout) activity.findViewById(R.id.toolbar_layout);
             if (appBarLayout != null) {
-                appBarLayout.setTitle(mItem.content);
+                appBarLayout.setTitle(mItem.website_name);
             }
         }
     }
@@ -61,7 +62,7 @@ public class WebsiteDetailFragment extends Fragment {
 
         // Show the dummy content as text in a TextView.
         if (mItem != null) {
-            ((TextView) rootView.findViewById(R.id.website_detail)).setText(mItem.details);
+            ((WebView) rootView.findViewById(R.id.website_detail)).loadUrl(mItem.website_url);
         }
 
         return rootView;
